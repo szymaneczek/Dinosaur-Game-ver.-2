@@ -18,6 +18,8 @@ public class DinosaurGame extends JPanel implements ActionListener, KeyListener 
     Image tree4Img;
     Image cloudImg;
 
+    Image backgroundImg;
+
     class Block {
         int x;
         int y;
@@ -79,6 +81,7 @@ public class DinosaurGame extends JPanel implements ActionListener, KeyListener 
         tree3Img = new ImageIcon(getClass().getResource("./img/tree3.png")).getImage();
         tree4Img = new ImageIcon(getClass().getResource("./img/tree4.png")).getImage();
         cloudImg = new ImageIcon(getClass().getResource("./img/cloud.png")).getImage();
+        backgroundImg = new ImageIcon(getClass().getResource("./img/dinobackground.png")).getImage();
 
         //dinosaur
         dinosaur = new Block(dinosaurX, dinosaurY, dinosaurWidth, dinosaurHeight, dinosaurImg);
@@ -132,6 +135,9 @@ public class DinosaurGame extends JPanel implements ActionListener, KeyListener 
         draw(g);
     }
     public void draw(Graphics g){
+        //background
+        g.drawImage(backgroundImg, 0, 0, boardWidth, boardHeight, null);
+
         // dinosaur
         g.drawImage(dinosaur.img, dinosaur.x, dinosaur.y, dinosaur.width, dinosaur.height, null);
 
